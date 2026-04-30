@@ -1,0 +1,105 @@
+/* =====================
+   Color System (NEW)
+===================== */
+:root {
+  --green: #2f6f4e;
+  --light-green: #e8f5ee;
+  --yellow: #f6c453;
+  --text: #1a1a1a;
+  --muted: #666;
+  --bg: #fcc7c7;
+}
+
+/* =====================
+   Base Update
+===================== */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #fecccc, var(--light-green));
+}
+
+/* =====================
+   Navbar (soft green tint)
+===================== */
+.navbar {
+  background: var(--bg);
+  border-bottom: 1px solid rgba(47, 111, 78, 0.15);
+}
+
+.logo {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* =====================
+   Hero (yellow accent)
+===================== */
+.hero-tagline {
+  color: var(--muted);
+}
+
+.btn-primary {
+  background: var(--green);
+  color: rgb(255, 176, 176);
+}
+
+.btn-primary:hover {
+  background: #1c6c43;
+}s
+
+.btn-secondary {
+  border: 1px solid var(--yellow);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: var(--yellow);
+  color: #000;
+}
+
+/* =====================
+   Section Title (accent line feel)
+===================== */
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--yellow);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* =====================
+   Contact (your favorite section - enhanced only visually)
+===================== */
+.contact-list a {
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-list a:hover {
+  border-bottom: 1px solid var(--yellow);
+}
+
+/* =====================
+   Subtle section spacing improvement
+===================== */
+.section {
+  padding: 5rem 0;
+}
+
+/* =====================
+   Hero improvement (slight warmth)
+===================== */
+.hero {
+  background: linear-gradient(180deg, #ffffff, #f4fbf7);
+}
