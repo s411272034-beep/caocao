@@ -1,105 +1,126 @@
 /* =====================
-   Color System (NEW)
+   Horror Color System 
 ===================== */
 :root {
-  --green: #2f6f4e;
-  --light-green: #e8f5ee;
-  --yellow: #f6c453;
-  --text: #1a1a1a;
-  --muted: #666;
-  --bg: #fcc7c7;
+  --deep-void: #0a0a0a;
+  --blood-red: #660000;
+  --ghost-white: #d1d1d1;
+  --corpse-purple: #2d1b33;
+  --text: #a0a0a0;
+  --muted: #444;
 }
 
 /* =====================
    Base Update
 ===================== */
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Courier New", Courier, monospace; /* 換成打字機感，更有老舊恐怖片氣氛 */
   color: var(--text);
-  background: linear-gradient(180deg, #fecccc, var(--light-green));
+  background: black;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* 增加一點煙霧瀰漫的感覺 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, transparent 20%, black 100%);
+  pointer-events: none;
+  z-index: 10;
 }
 
 /* =====================
-   Navbar (soft green tint)
+   Navbar (消失在黑暗中)
 ===================== */
 .navbar {
-  background: var(--bg);
-  border-bottom: 1px solid rgba(47, 111, 78, 0.15);
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid var(--blood-red);
 }
 
 .logo {
-  color: var(--green);
-  font-weight: 600;
+  color: var(--blood-red);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 8px var(--blood-red);
 }
 
 /* =====================
-   Hero (yellow accent)
+   Hero (陰森開場)
 ===================== */
-.hero-tagline {
-  color: var(--muted);
+.hero {
+  background: linear-gradient(180deg, #000, var(--corpse-purple));
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-name {
+  font-size: 3rem;
+  color: var(--ghost-white);
+  animation: flicker 3s infinite;
 }
 
 .btn-primary {
-  background: var(--green);
-  color: rgb(255, 176, 176);
+  background: var(--blood-red);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  transition: 0.5s;
 }
 
 .btn-primary:hover {
-  background: #1c6c43;
-}s
+  background: #990000;
+  box-shadow: 0 0 20px var(--blood-red);
+}
 
 .btn-secondary {
-  border: 1px solid var(--yellow);
-  color: var(--text);
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  padding: 10px 20px;
 }
 
 .btn-secondary:hover {
-  background: var(--yellow);
-  color: #000;
+  border-color: var(--ghost-white);
+  color: var(--ghost-white);
 }
 
 /* =====================
-   Section Title (accent line feel)
+   Animations
+===================== */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.2; }
+}
+
+/* =====================
+   Section Title
 ===================== */
 .section-title {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1.5rem;
+  color: var(--blood-red);
+  border-left: 4px solid var(--blood-red);
+  padding-left: 15px;
 }
 
 .section-title::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: var(--yellow);
-  margin-top: 6px;
-  border-radius: 2px;
+  display: none; /* 移除原本的黃色線條 */
 }
 
 /* =====================
-   Contact (your favorite section - enhanced only visually)
+   Contact
 ===================== */
 .contact-list a {
-  color: var(--green);
+  color: var(--ghost-white);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  transition: color 0.3s;
 }
 
 .contact-list a:hover {
-  border-bottom: 1px solid var(--yellow);
-}
-
-/* =====================
-   Subtle section spacing improvement
-===================== */
-.section {
-  padding: 5rem 0;
-}
-
-/* =====================
-   Hero improvement (slight warmth)
-===================== */
-.hero {
-  background: linear-gradient(180deg, #ffffff, #f4fbf7);
+  color: var(--blood-red);
+  cursor: crosshair; /* 游標變成十字準心，增加不安感 */
 }
