@@ -124,3 +124,55 @@ body::before {
   color: var(--blood-red);
   cursor: crosshair; /* 游標變成十字準心，增加不安感 */
 }
+/* =====================
+   Font Update
+===================== */
+
+/* 整體背景與基礎文字保持 Courier New 增加儀式感 */
+body {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--text);
+  background: black;
+}
+
+/* 導覽列與 Logo：使用 Nosifer 字體 (看起來像腐蝕的碑文) */
+.logo {
+  font-family: 'Nosifer', cursive;
+  color: var(--blood-red);
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.7);
+}
+
+.nav-links a {
+  font-family: 'Creepster', system-ui;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  color: var(--ghost-white);
+  text-decoration: none;
+}
+
+/* Hero 標題：使用 Creepster (滴血感) */
+.hero-name {
+  font-family: 'Creepster', system-ui;
+  font-size: 5rem; /* 加大尺寸更有壓迫感 */
+  color: var(--blood-red);
+  text-shadow: 5px 5px 15px #000, 0 0 20px #ff0000;
+  animation: flicker 3s infinite;
+}
+
+/* 區塊標題 */
+.section-title {
+  font-family: 'Creepster', system-ui;
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  color: var(--blood-red);
+  border-left: 4px solid var(--blood-red);
+}
+
+/* 中文內容建議：
+   由於 Google Fonts 的恐怖字體多不支援中文，
+   中文部分我們會維持原樣，但加上一點模糊模糊的陰影 */
+.about-text, .contact-list p {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  line-height: 1.8;
+}
